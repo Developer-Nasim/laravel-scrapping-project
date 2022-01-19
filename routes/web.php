@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::post('/link', "PriceFindScript@scrape");
+Route::get('/delete/{id}', "PriceFindScript@delete");
 
 Route::get('/', function () {
     return view('welcome');

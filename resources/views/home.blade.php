@@ -19,6 +19,7 @@
                                 <th scope="col">Price</th>
                                 <th scope="col">Member Price</th>
                                 <th scope="col">Created</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -29,6 +30,7 @@
                                     <td>{{$item->price}} </td>
                                     <td></td>
                                     <td>{{$item->created_at}} </td>
+                                    <td><a href="/delete/{{$item->id}}" class="btn btn-danger">Delete</a></td>
                                 </tr> 
                             @endforeach 
                            

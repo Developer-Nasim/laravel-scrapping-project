@@ -78,4 +78,20 @@ class PriceFindScript extends Controller
 
         return $matches->toArray();
     }
+
+    public function delete($id){
+        
+        $check_exist  = DB::table('urls')->where('id',$id)->first();
+        if ($check_exist) {
+            DB::table('urls')->where('id',$id)->delete();
+            $ck = DB::table('urlattributes')->where('urlid',$check_exist->id)->exists();
+            if ($ck) {
+                DB::table('urlattributes')->where('urlid',$check_exist->id)->delete();
+            }
+        }
+
+        return back();
+    }
+
+
 }
